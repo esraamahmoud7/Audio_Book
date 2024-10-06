@@ -4,13 +4,13 @@ import '../Constants.dart';
 import 'CustomButton.dart';
 
 
-class CustomBoarding extends StatelessWidget {
-  const CustomBoarding({
-    super.key, required this.image1, required this.Title1, required this.Button1, required this.Button2, this.onTap1, required this.imageDotted, this.onTap2,
+class CustomBoardingB3 extends StatelessWidget {
+  const CustomBoardingB3({
+    super.key, required this.image1, required this.Title1, required this.Button1,this.onTap1, required this.imageDotted,
   });
 
-  final String image1,Title1,Button1,Button2,imageDotted;
-  final void Function()? onTap1,onTap2;
+  final String image1,Title1,Button1,imageDotted;
+  final void Function()? onTap1;
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +29,8 @@ class CustomBoarding extends StatelessWidget {
         SizedBox(height: 60,),
         Image.asset(imageDotted),
         SizedBox(height : 60),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomButton(colour: Color(0xffffffff),title: Button1,TextColor: color,onTap: onTap1,width: 140,),
-            SizedBox(width: 15,),
-            CustomButton(colour: color,title: Button2,TextColor: Color(0xffffffff),onTap: onTap2,width: 140,),
-          ],
-        )
-
+        CustomButton(colour: color,title: Button1,TextColor: Color(0xffffffff),onTap: onTap1,width: 295,),
       ],
     );
   }
 }
-

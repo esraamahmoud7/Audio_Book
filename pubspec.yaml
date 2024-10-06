@@ -64,6 +64,10 @@ flutter:
      - assets/Boarding1.png
      - assets/CarouselB1.png
      - assets/Background Pattern (1).png
+     - assets/CarouselB2 .png
+     - assets/Boarding2.png
+     - assets/Boarding3.png
+     - assets/CarouselB3 .png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
