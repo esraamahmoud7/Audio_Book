@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/CustomBoarding.dart';
 import '../widgets/CustomBoardingB3.dart';
 import 'logIn.dart';
 

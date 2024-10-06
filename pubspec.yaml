@@ -68,6 +68,9 @@ flutter:
      - assets/Boarding2.png
      - assets/Boarding3.png
      - assets/CarouselB3 .png
+     - assets/logos_facebook.png
+     - assets/logos_google.png
+     - assets/logos_twitter.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

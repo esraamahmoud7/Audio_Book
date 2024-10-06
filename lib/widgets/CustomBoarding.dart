@@ -23,18 +23,18 @@ class CustomBoarding extends StatelessWidget {
         ),
         Image.asset(image1),
         SizedBox(height: 10,),
-        Text(Title1 , style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: color,)),
+        Text(Title1 , style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: KColor,)),
         Text("Lorem ipsum dolor sit amet la maryame \n \t \t \t \t \t \t   dor sut colondeum.",
-            style: TextStyle(fontSize: 16,color: color)),
+            style: TextStyle(fontSize: 16,color: KColor)),
         SizedBox(height: 60,),
         Image.asset(imageDotted),
         SizedBox(height : 60),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomButton(colour: Color(0xffffffff),title: Button1,TextColor: color,onTap: onTap1,width: 140,),
+            CustomButton(colour: Color(0xffffffff),title: Button1,TextColor: KColor,onTap: onTap1,width: 140,height: 56,),
             SizedBox(width: 15,),
-            CustomButton(colour: color,title: Button2,TextColor: Color(0xffffffff),onTap: onTap2,width: 140,),
+            CustomButton(colour: KColor,title: Button2,TextColor: Color(0xffffffff),onTap: onTap2,width: 140,height: 56,),
           ],
         )
 
