@@ -7,7 +7,8 @@ import '../Constants.dart';
 import '../helper/showSnakeBar.dart';
 import '../widgets/TextField.dart';
 import 'Register.dart';
-import 'Welcome.dart';
+
+import 'home.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -53,7 +54,7 @@ class _LogInState extends State<LogIn> {
                       await LoginUser();
                       showSnakeBar(
                           context, "we miss you :').");
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Welcome()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'user-not-found') {
                         showSnakeBar(context,

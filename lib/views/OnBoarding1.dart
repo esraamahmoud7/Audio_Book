@@ -6,6 +6,8 @@ import 'OnBoarding2.dart';
 class Boarding1 extends StatelessWidget {
   const Boarding1({super.key});
 
+  final String id="Boarding1";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

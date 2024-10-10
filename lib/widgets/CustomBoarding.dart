@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../Constants.dart';
+import 'CommonBackGround.dart';
 import 'CustomButton.dart';
 
 
@@ -16,11 +17,7 @@ class CustomBoarding extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(
-          'assets/Background Pattern (1).png', // Your image path in assets folder
-          fit: BoxFit.contain,        // To make the image cover the entire screen
-          width: MediaQuery.of(context).size.width ,
-        ),
+        ImageBack(),
         Image.asset(image1),
         SizedBox(height: 10,),
         Text(Title1 , style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: KColor,)),

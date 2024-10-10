@@ -1,4 +1,5 @@
 import 'package:audio_book/Constants.dart';
+import 'package:audio_book/models/UesrSelection.dart';
 import 'package:audio_book/views/logIn.dart';
 import 'package:audio_book/widgets/CustomButton.dart';
 import 'package:audio_book/widgets/TextField.dart';
@@ -66,10 +67,12 @@ class _RegisterState extends State<Register> {
                     isLoading = true;
                     setState(() {});
                     try {
+                        UserSelection user = UserSelection(ID: email!, selectedTopics: []);
                         await RegisterUser();
                         showSnakeBar(
                         context, 'The account created successfully.');
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Welcome()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Welcome(user : user)));
+                        print(email);
                         } on FirebaseAuthException catch (e) {
                         if (e.code == 'weak-password') {
                         showSnakeBar(context,
