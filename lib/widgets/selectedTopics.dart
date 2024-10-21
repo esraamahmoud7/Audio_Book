@@ -19,11 +19,6 @@ class SelectedTopics extends StatefulWidget {
 
 class _SelectedTopicsState extends State<SelectedTopics> {
 
-  List<String> topics = [
-    'Art', 'Business', 'Biography', 'Comedy', 'Culture',
-    'Education', 'News', 'Philosophy', 'Psychology', 'Technology', 'Travel'
-  ];
-
   List<String> selectedTopics = [];
 
   @override
@@ -64,7 +59,7 @@ class _SelectedTopicsState extends State<SelectedTopics> {
           else
             {
               SaveSelection();
-              Navigator.push(context, MaterialPageRoute(builder: (context) => doneRegister()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => doneRegister(user: widget.user)));
 
             }
         },

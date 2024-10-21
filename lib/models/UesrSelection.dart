@@ -1,3 +1,8 @@
+import 'package:audio_book/models/bookModel.dart';
+import 'package:dio/dio.dart';
+
+import '../services.dart';
+
 class UserSelection
 {
 
@@ -6,8 +11,17 @@ class UserSelection
 
   UserSelection({required this.selectedTopics,required this.ID});
 
-  // factory UserSelection.fromJson(jsonData)
-  // {
-  //   return UserSelection(jsonData[''],jsonData[''], );
-  // }
+  Future<List<bookModel>> InterstedBooks()async
+  {
+    List<bookModel> books=[];
+    for (int i=0;i<selectedTopics.length;i++)
+      {
+        books.addAll(await BookServices(Dio()).getBooks(category: selectedTopics[i]));
+      }
+    for(int i=0;i<books.length;i++)
+      {
+        print(books[i].title);
+      }
+    return books;
+  }
 }

@@ -1,10 +1,12 @@
 import 'package:audio_book/widgets/CustomButton.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import '../Constants.dart';
 import '../helper/showSnakeBar.dart';
+import '../models/UesrSelection.dart';
 import '../widgets/TextField.dart';
 import 'Register.dart';
 
@@ -52,9 +54,18 @@ class _LogInState extends State<LogIn> {
                     setState(() {});
                     try {
                       await LoginUser();
-                      showSnakeBar(
-                          context, "we miss you :').");
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                      showSnakeBar(context, "we miss you :').");
+                      // Query Firestore to get the document where email matches
+                      CollectionReference usersCollection = FirebaseFirestore.instance.collection('SelectedTopics');
+
+                      // Use a query to find the document with the specific email
+                      QuerySnapshot querySnapshot = await usersCollection.where('email', isEqualTo: Email).get();
+
+                      DocumentSnapshot userDoc = querySnapshot.docs.first;
+                      final UserSelection user = UserSelection(selectedTopics: List<String>.from(userDoc['selectedTopics']), ID: Email!);
+
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home(user: user)));
+
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'user-not-found') {
                         showSnakeBar(context,
